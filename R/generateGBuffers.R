@@ -45,13 +45,13 @@ generateGBuffers <- function(taxon, occurrenceData, bufferDistM){
   }else{
     d2 <- "No G points present"
   }
-  # # generate a plot of the points for a quality check)
+  # # generate a plot of the points for a quality check
   # terra::plot(d2,  main = "Buffer G points",
   #             xlab = "Longitude", ylab = "Latitude")
   # # add points as reference
   # terra::plot(d1, add = TRUE)
 
-  # leaflet map of
+  # leaflet map of the buffered points
   map_title <- "<h3 style='text-align:center; background-color:rgba(255,255,255,0.7); padding:2px;'>Buffered G Occurrences</h3>"
   map <- leaflet(d2) |>
     addTiles() |>
