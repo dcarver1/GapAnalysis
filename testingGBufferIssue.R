@@ -3,7 +3,7 @@ library(raster)
 library(GapAnalysis)
 
 # temp fix --- source the ERSex,GRSex,and Gbuffer function from the library folder
-# instead of the gapanalysis:: call. this  has a terra implimentation on the buffer process
+# instead of the gapanalysis:: call. this  has a terra implementation on the buffer process
 # so it works
 source("R/ERSex.R")
 source("R/GRSex.R")
