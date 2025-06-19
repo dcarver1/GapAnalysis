@@ -2,14 +2,15 @@
 
 0 errors | 0 warnings | 1 note
 
-*This is a version update of an existing library 
+---
 
-Thank you for your efforts :) 
+## Summary
 
-The previous version of this package utilized the `sp` and `raster` libraries. 
+This is a version update of an existing library.
 
-This update is primary to transition all spatial data workflows to the currently supported libraries of `terra` and `sf`
+The previous version of this package utilized the `sp` and `raster` libraries.
+This update is primarily to transition all spatial data workflows to the currently supported libraries of `terra` and `sf`.
 
-As it's a major update we've also taken the time to add some quality of life projects to the primary functions to give end users more evaluatory outputs, i.e. maps. 
+As this is a major update, we have also taken the time to add several quality-of-life projects to the primary functions, providing end users with more evaluative outputs (e.g., maps). 
 
-
+Thank you for your efforts! :)
