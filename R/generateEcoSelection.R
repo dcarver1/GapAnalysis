@@ -1,16 +1,16 @@
-#' @title Select relivent ecoregions
+#' @title Select relevant ecoregions
 #' @name generateEcoSelection
 #' @description
-#' Utilizes the occurrence data location to select all ecoregions that intersect with thoses points. Helpful as it
+#' Utilizes the occurrence data location to select all ecoregions that intersect with those points. Helpful as it
 #' reduces the overall file size of the ecoregion object.
 #'
 #' @param taxon A character object that defines the name of the species as listed in the occurrence dataset
 #'
-#' @param occurrenceData a data frame of values containing columns for the taxon, latitude, longitude, and type
+#' @param occurrenceData A data frame of values containing columns for the taxon, latitude, longitude, and type
 #'
-#' @param ecoregions A terra vect object the contains spatial information on all ecoregions of interests
+#' @param ecoregions A terra vect object that contains spatial information on all ecoregions of interests
 #'
-#' @param idColumn A character vector that notes what column within the ecoregions object should be used as a unique ID
+#' @param idColumn A character vector that notes which column within the ecoregions object should be used as a unique ID
 #'
 #'
 #' @return selectedEcos : a terra vect that contains the selected ecoregion features
@@ -44,13 +44,13 @@ generateEcoSelection <- function(taxon, occurrenceData, ecoregions, idColumn){
     dplyr::filter(species == taxon) |>
     terra::vect(geom=c("longitude", "latitude"))
 
-  # determine the eco regions present in the
+  # determine the eco regions present
   inter <- terra::intersect(x = d1, y = ecoregions) |>
     terra::as.data.frame()
   # select ecoregions of interest
   ecoCodes <- unique(inter[,idColumn])
   # index with selection
-  ## conver to table for easier indexing
+  ## convert to table for easier indexing
   eco2 <- terra::as.data.frame(ecoregions)
   ## select
   selectedEcos <- ecoregions[eco2[,idColumn] %in% ecoCodes, ]
