@@ -1,4 +1,4 @@
-############### SINGLE SPECIES WORKED EXAMPLE for README ##################################
+############### SINGLE SPECIES WORKED EXAMPLE for README ###############################
 
 # Load libraries
 pacman::p_load(dplyr, terra, sf)
