@@ -1,7 +1,7 @@
 
-## meant to replicated the user experience where they are bringing in there point data and rasters
+## meant to replicate the user experience where they are bringing in their point data and rasters
 # Load libraries
-pacman::p_load(dplyr, terra, sf, leaflet,htmltools)
+pacman::p_load(dplyr, terra, sf, leaflet, htmltools)
 
 ##Obtaining occurrences from example
 load("data/CucurbitaData.rda")
@@ -26,6 +26,7 @@ for(i in files){
 ecos <- terra::vect(eco1) # currently a sf object see if it runs or change
 proAreas <- terra::unwrap(protectAreasRast)
 
+r1 <- terra::rast("C:/Users/sarah/Desktop/Agrobiodiversity/Vitis/Data/data/wdpa_rasterized_all.tif")
 r1 <- terra::rast("~/trueNAS/work/cwr_wildgrapes/data/geospatial_datasets/protectedLands/wdpa_rasterized_all.tif")
 # Start the single species workflow  --------------------------------------
 taxon <- unique(occurrence_Data$species)[1]
@@ -45,9 +46,9 @@ occurrences <- checkOccurrences(csv = occurrence_Data, taxon = taxon)
 ### add a
 sdm <- checkRaster(sdm)
 ## protected area
-proArea <- checkProtectAreas(proArea = proAreas, sdm = sdm)
+proArea <- checkProtectedAreas(protectedAreas = proAreas, sdm = sdm) #sp: protected and protectedAreas
 ## ecoregion check
-eco <- checkEcoregion(eco = ecos, sdm = sdm, uniqueID ="ECO_ID_U" )
+eco <- checkEcoregion(eco = ecos, sdm = sdm, uniqueID = "ECO_ID_U" )
 
 # generate gbuffer objects
 ## gBuffers
@@ -73,10 +74,6 @@ fcsex <- FCSex(taxon = taxon, srsex = srsex, grsex = grsex, ersex = ersex)
 
 ### Insitu
 # srs
-### not liking this map at all.... please take a look as it confusing why there is not
-### direct overlap between the points and the SDM. I'm guessing this is just a image scale
-### reduction issue but if feel more confusing then helpful at this point.
-### we represent this metric different in other work but it'll take some effort to reproduce
 srsin <- SRSin(taxon = taxon,
                sdm = sdm,
                occurrence_Data = occurrences$data,
