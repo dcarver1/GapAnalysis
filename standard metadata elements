@@ -15,7 +15,7 @@ Parameters
 #'
 #' @param occurrenceData a data frame of values containing columns for the taxon, latitude, longitude, and type
 #'
-#' @param protectedAreas A terra rast object the contian spatial location of protected areas.
+#' @param protectedAreas A terra rast object that contains spatial location of protected areas.
 #'
 #' @param gBuffer A terra vect which encompases a specific buffer distance around all G points
 #'
