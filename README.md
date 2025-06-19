@@ -1,16 +1,16 @@
 # GapAnalysis R package
 
-## hot fix for dependency issue with rgeos. 
-- please see worked example in the doc for how to get around the error being thown by the FCSex function 
+## Hot fix for dependency issue with rgeos. 
+- Please see worked example in the documentation for how to get around the error being thrown by the FCSex function:
 ```r
 Error in explodePolygons(x, ...) : 
   package rgeos is needed to relate holes to their corresponding polygons
 ```
-This involves directly source a few files from this repo to replace the functions use in gapanalysis. 
+This involves directly sourcing a few files from this repo to replace the functions use in GapAnalysis. 
 #### changes 
-gbuffer has been revamped to use terra. This still returns a sp object so it's not package wide alternation. 
+`gBuffer` has been revamped to use terra. This still returns a sp object so it's not package wide alternation. 
 
-FCSex, ERSex, GRSex functions have remove name space funciton calls when calling (gBuffer, ERSex, GRSex) to allow these replacement function to be source directly from this repo. 
+FCSex, ERSex, GRSex functions have removed namespace function calls when calling (gBuffer, ERSex, GRSex) to allow these replacement functions to be sourced directly from this repo. 
 
 
 
@@ -23,7 +23,7 @@ The GapAnalysis functions require the user to provide two inputs: a `data.frame`
 This library consists of 12 functions within 4 families: pre-analysis, ex situ conservation gap analysis, in situ conservation gap analysis, and summary evaluations. In short, the pre-analysis process establishes the file structure and prepares the input data. The ex situ and in situ processes perform the respective conservation strategy gap analyses and produce both quantitative and spatial results. The combined assessment merges the individual assessments, summarizes the results across taxa, calculates the indicator, and generates a summary html document for each taxon, which can be used to evaluate outputs and aid conservation planning.
 
 ## Installation
-GapAnalysis can be installed as follows
+GapAnalysis can be installed as follows:
 ```r
 #CRAN
 install.packages("GapAnalysis")
@@ -169,7 +169,7 @@ FCSc_mean_df <- FCSc_mean(FCSex_df = FCSex_df,FCSin_df = FCSin_df)
 indicator_df  <- indicator(FCSc_mean_df)
 ```
 
-The below sub-sections provide further details on the input data and GapAnalysis steps.
+The sub-sections below provide further details on the input data and GapAnalysis steps.
 
 ### Data inputs
 **_Species occurrences_**
@@ -196,7 +196,7 @@ More information and examples of how to make the distinction between “H” and
 <a name="ecolink">
 <b><i>Ecoregions and Protected Area </b></i>
 </a>
-The ecoregion and protected areas datasets are provide through the package via the `GetDatasets()` functions. The files will be downloaded and store at
+The ecoregion and protected areas datasets are provided through the package via the `GetDatasets()` functions. The files will be downloaded and stored at:
 ```r
 system.file("data/preloaded_data/ecoRegion/tnc_terr_ecoregions.shp",package = "GapAnalysis")
 ```
