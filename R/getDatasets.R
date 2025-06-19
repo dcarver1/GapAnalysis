@@ -1,9 +1,9 @@
 
-#' @title Download datasets from the harvard dataverse repo
+#' @title Download datasets from the Harvard Dataverse repo
 #' @name getDatasets
 #' @description
-#' Ecoregions and protected area data base are stored on a harvard dataverse repository. This functions check to see if
-#' those datasets have been download and will download them if not present.
+#' Ecoregions and protected area database are stored on a Harvard Dataverse repository. This function checks to see if
+#' those datasets have been downloaded and will download them if not present.
 #'
 #'
 #'
