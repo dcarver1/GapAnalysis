@@ -1,7 +1,7 @@
 pacman::p_load(raster,terra,dplyr)
 
 
-## preping the input dataset
+## prepping the input dataset
 load("data/CucurbitaRasters.rda")
 CucurbitaRasts <- terra::rast(CucurbitaRasters) |> terra::wrap()
 #' # export for terra version
