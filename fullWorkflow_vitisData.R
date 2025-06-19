@@ -1,5 +1,5 @@
 
-## meant to replicated the user experience where they are bringing in there point data and rasters
+## meant to replicate the user experience where they are bringing in their point data and rasters
 # Load libraries
 pacman::p_load(dplyr, terra, sf)
 
