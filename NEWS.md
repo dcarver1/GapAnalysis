@@ -1,10 +1,10 @@
 # GapAnalysis 2.0.0
 
-* Initial CRAN submission.
+_Initial CRAN submission._
 
 Fundamentally, the gap analysis functions will produce the same quantitative results as the first version of the package.
 
-Specific changes 
+## Specific changes 
 
 - Workflows now use `sf` and `terra` libraries.
 
